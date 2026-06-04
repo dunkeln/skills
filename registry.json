@@ -9,6 +9,10 @@
     "postmortem": {
       "path": "skills/postmortem",
       "description": "Evidence-chain RCA for production failures, regressions, incidents, broken deploys, CI failures, and data issues."
+    },
+    "4x4": {
+      "path": "skills/4x4",
+      "description": "Parallel branch tournament for ambiguous bugs, feature directions, architecture choices, and agent loops."
     }
   }
 }

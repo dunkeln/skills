@@ -10,6 +10,7 @@ Engineering-first skills for coding agents.
 ```sh
 npx skills add https://github.com/dunkeln/skills --skill premortem
 npx skills add https://github.com/dunkeln/skills --skill postmortem
+npx skills add https://github.com/dunkeln/skills --skill 4x4
 ```
 
 List available skills:
@@ -24,3 +25,4 @@ npx skills add https://github.com/dunkeln/skills --list --full-depth
 |---|---|
 | `premortem` | Pressure-test a high-risk technical plan before committing. |
 | `postmortem` | Explain an engineering failure with evidence-chain RCA. |
+| `4x4` | Break agent tunneling with a four-lane branch tournament. |
