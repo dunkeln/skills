@@ -41,16 +41,3 @@ skills/<name>/
   diagnostics/
   domain-policies/
 ```
-
-## Conventions
-
-- Keep `SKILL.md` short and operational.
-- Put depth in `references/`, not the entrypoint.
-- Add deterministic helpers under `scripts/` only when they reduce agent guesswork.
-- Keep engineering skills engineering-focused; do not mix in broad business strategy.
-
-## Local Check
-
-```sh
-npm run skills -- add postmortem --target /tmp/skills-check --force
-```
