@@ -12,12 +12,6 @@ npx skills add https://github.com/dunkeln/skills --skill premortem
 npx skills add https://github.com/dunkeln/skills --skill postmortem
 ```
 
-Non-interactive Codex install:
-
-```sh
-npx skills add https://github.com/dunkeln/skills --skill postmortem --agent codex --copy --yes
-```
-
 List available skills:
 
 ```sh
@@ -30,14 +24,3 @@ npx skills add https://github.com/dunkeln/skills --list --full-depth
 |---|---|
 | `premortem` | Pressure-test a high-risk technical plan before committing. |
 | `postmortem` | Explain an engineering failure with evidence-chain RCA. |
-
-## Shape
-
-```text
-skills/<name>/
-  SKILL.md
-  BEHAVIOR_SPEC.md
-  references/
-  diagnostics/
-  domain-policies/
-```
