@@ -5,12 +5,11 @@ A small registry and installer for reusable coding-agent skills.
 ## Install a Skill
 
 ```sh
-npx skills add https://github.com/dunkeln/premortem
+npx skills add https://github.com/dunkeln/skills --skill premortem
 ```
 
-The installer resolves the final URL segment as the skill name, finds it in
-`registry.json`, and copies the matching folder from `skills/` into the local
-skills directory.
+The public `skills` installer treats the URL as the source repository, then
+`--skill premortem` selects the skill folder inside this monorepo.
 
 ## Available Skills
 
