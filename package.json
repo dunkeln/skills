@@ -1,0 +1,14 @@
+{
+  "name": "skills",
+  "version": "0.1.0",
+  "type": "module",
+  "bin": {
+    "skills": "./bin/skills.mjs"
+  },
+  "scripts": {
+    "skills": "node ./bin/skills.mjs"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "name": "dunkeln-skills",
+  "version": 1,
+  "skills": {
+    "premortem": {
+      "path": "skills/premortem",
+      "description": "Decision-quality pre-commitment and premortem-style risk analysis."
+    }
+  }
+}
