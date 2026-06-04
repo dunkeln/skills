@@ -4,7 +4,11 @@
   "skills": {
     "premortem": {
       "path": "skills/premortem",
-      "description": "Decision-quality pre-commitment and premortem-style risk analysis."
+      "description": "Engineering-first pre-commitment risk analysis for high-risk technical plans."
+    },
+    "postmortem": {
+      "path": "skills/postmortem",
+      "description": "Evidence-chain RCA for production failures, regressions, incidents, broken deploys, CI failures, and data issues."
     }
   }
 }
