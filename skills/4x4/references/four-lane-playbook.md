@@ -1,40 +1,40 @@
-# Branch Tournament
+# Four-Lane Playbook
 
-Use the tournament to turn parallelism into structured disagreement. The goal is not four answers; the goal is one answer that survives serious opposition.
+Use the four lanes to turn parallelism into structured disagreement. The goal is not four answers; the goal is one next move that survives serious challenge.
 
 ## Default Lanes
 
-### Explorer
+### Wide Search
 
-- Payoff: maximize search breadth and novelty.
+- How it wins: finds a path the obvious answer missed.
 - Good at: escaping local minima, finding ignored paths, reframing the implementation.
 - Must answer: what obvious assumption might be false?
 - Loses when: novelty adds scope without stronger evidence.
 
-### Conservative
+### Smallest Safe Move
 
-- Payoff: minimize blast radius and preserve contracts.
+- How it wins: solves the behavior with the least risky change.
 - Good at: smallest safe fix, compatibility, rollback, migration risk.
 - Must answer: what is the least change that could work?
 - Loses when: safety preserves the wrong behavior or dodges the core issue.
 
-### Adversary
+### Break The Favorite
 
-- Payoff: disprove the leading answer.
+- How it wins: prevents the team from shipping the wrong confident answer.
 - Good at: hidden failure modes, race conditions, missing constraints, user harm.
 - Must answer: why might the best-sounding fix be wrong?
 - Loses when: critique is generic and not tied to evidence.
 
-### Verifier
+### Prove It
 
-- Payoff: demand proof.
+- How it wins: identifies the fastest proof or deciding check.
 - Good at: executable checks, logs, traces, counterfactuals, acceptance criteria.
 - Must answer: what evidence would decide this quickly?
 - Loses when: verification cost exceeds the decision value.
 
 ## Domain Lane Sets
 
-Use domain names when they create clearer separation, but keep the four payoffs above active.
+Use domain names when they create clearer separation, but keep the four lane incentives above active.
 
 Product app bug:
 
@@ -71,9 +71,9 @@ Greenfield feature:
 - Integration boundary.
 - Edge cases and failure states.
 
-## Scoring Criteria
+## Pick Criteria
 
-Score qualitatively. Avoid fake precision.
+Compare qualitatively. Avoid fake precision.
 
 - Evidence strength: what code, logs, traces, docs, or prior attempts support it?
 - Counterfactual fit: would this explain the observed behavior and the absence of other symptoms?
@@ -82,8 +82,8 @@ Score qualitatively. Avoid fake precision.
 - User value: does it solve the behavior the user actually cares about?
 - Opposition survival: did it survive the strongest critique?
 
-## Winner Rule
+## Pick Rule
 
 Do not pick the most confident lane. Pick the lane whose explanation and next action survive the strongest opposing lane.
 
-If no lane wins, return PROBE FIRST with the smallest discriminating check.
+If no lane wins, return PROBE with the smallest deciding check.

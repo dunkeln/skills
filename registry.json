@@ -12,7 +12,7 @@
     },
     "4x4": {
       "path": "skills/4x4",
-      "description": "Parallel branch tournament for ambiguous bugs, feature directions, architecture choices, and agent loops."
+      "description": "Four-lane product-engineering workflow for ambiguous bugs, feature directions, architecture choices, and agent loops."
     }
   }
 }

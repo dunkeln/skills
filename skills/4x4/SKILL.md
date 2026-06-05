@@ -1,19 +1,19 @@
 ---
 name: "4x4"
-description: "Parallel branch tournament for ambiguous engineering bugs, feature directions, architecture choices, and agent loops: split into four distinct lanes, score under adversarial payoffs, select a winner, and validate before implementation."
+description: "Four-lane product-engineering workflow for ambiguous bugs, feature directions, architecture choices, and agent loops: compare the bold path, safe path, break-it path, and proof path before choosing the next move."
 ---
 
 # 4X4
 
-Break agent tunneling when one plausible path is not enough. Run four distinct lanes, score them under different payoffs, attack the winner, and validate before changing code.
+Break agent tunneling when one plausible path is not enough. Compare four distinct lanes, challenge the favorite, and pick the next move with proof.
 
-> **Runtime is self-sufficient.** Every rule that affects analysis behavior lives here: use cases, routing, modes, status taxonomy, branch tournament rules, validation gates, output shape, and reference-loading rules.
+> **Runtime is self-sufficient.** Every rule that affects analysis behavior lives here: use cases, routing, modes, result calls, lane rules, proof checks, output shape, and reference-loading rules.
 
 ---
 
 # Use When
 
-Invoke when the user asks for 4x4 analysis, parallel exploration, branch tournament, or needs help with an ambiguous engineering bug, feature direction, architecture fork, implementation plan, or repeated agent loop.
+Invoke when the user asks for 4x4 analysis, parallel exploration, or needs help choosing between plausible paths for an ambiguous engineering bug, feature direction, architecture fork, implementation plan, or repeated agent loop.
 
 Strong fits:
 
@@ -22,7 +22,7 @@ Strong fits:
 - product behavior is clear but technical path is unclear
 - UI/state/API/safety concerns interact
 - frontend/backend/data/deploy ownership is unclear
-- a proposed fix needs adversarial comparison before implementation
+- a proposed fix needs challenge before implementation
 - high uncertainty where a single-pass answer would likely overfit
 
 ---
@@ -46,7 +46,7 @@ Run before analysis begins. If the user supplied enough context, infer routing b
 > A. Stuck bug or regression · B. New feature with unclear implementation · C. Architecture or integration fork · D. Proposed fix needs challenge · E. Simple known change
 
 - A/B/C/D -> Layer 2
-- E -> WRONG TOOL unless the user asks for adversarial comparison
+- E -> WRONG TOOL unless the user asks for structured comparison
 
 ## Layer 2 — Ambiguity and Stakes
 
@@ -69,11 +69,11 @@ Run before analysis begins. If the user supplied enough context, infer routing b
 
 # Core Principles
 
-1. Diverge before converging.
+1. Look in four directions before committing to one.
 2. Four copies of the same guess are not four lanes.
-3. Different payoffs create better disagreement than different labels.
-4. Confidence is not the winner; survival under opposition is.
-5. A branch must explain what would make it lose.
+3. Different incentives create better disagreement than different labels.
+4. Confidence does not win; proof does.
+5. A lane must explain what would make it lose.
 6. Compare product behavior, evidence, reversibility, and blast radius.
 7. Implementation starts only after the winning lane passes validation.
 
@@ -83,12 +83,12 @@ Run before analysis begins. If the user supplied enough context, infer routing b
 
 These rules fire in every mode including FAST.
 
-1. **Lane separation gate:** Each lane must use a distinct lens and payoff. If lanes collapse into the same answer, run `diagnostics/lane-collapse-check.md`.
-2. **Adversarial payoff gate:** Always include Explorer, Conservative, Adversary, and Verifier incentives, even if domain-specific lane names are used.
-3. **Evidence gate:** Do not recommend implementation unless the winning lane cites evidence, a discriminating probe, or an explicit assumption that must be verified.
-4. **Opposition gate:** The leading lane must survive the strongest critique from another lane. If it does not, return PROBE FIRST or SPLIT DECISION.
-5. **Validation gate:** Before code changes, run the four validation layers: identity/scope, task execution, self-reflection, and system memory.
-6. **Output shape gate:** Use Markdown cards/lists, not tables. First substantive block must be `4x4 Status`.
+1. **Lane separation:** Each lane must use a distinct lens and incentive. If lanes collapse into the same answer, run `diagnostics/lane-collapse-check.md`.
+2. **Different incentives:** Always include wide search, smallest safe move, break-the-favorite, and prove-it incentives, even if domain-specific lane names are used.
+3. **Proof before pick:** Do not recommend implementation unless the chosen lane cites evidence, a deciding probe, or an explicit assumption that must be verified.
+4. **Challenge the favorite:** The leading lane must survive the strongest critique from another lane. If it does not, return PROBE or SPLIT.
+5. **Proof checks:** Before code changes, run the four validation layers: identity/scope, task execution, self-reflection, and system memory.
+6. **Output shape:** Use product-friendly Markdown cards/lists, not tables. First substantive block must be `4x4 Snapshot`. Do not expose internal process labels unless the user asks for them.
 
 ---
 
@@ -103,28 +103,28 @@ Select the strongest applicable signal. If signals conflict, escalate.
 
 ---
 
-# Status Taxonomy
+# Result Calls
 
-- **WINNER SELECTED** — one lane survived opposition and validation; implementation or next step is clear.
-- **PROBE FIRST** — one or more small checks would decide between lanes; do not implement yet.
-- **SPLIT DECISION** — two lanes remain plausible; name the smallest discriminating evidence.
+- **PICKED** — one lane survived challenge and proof checks; implementation or next step is clear.
+- **PROBE** — one or more small checks would decide between lanes; do not implement yet.
+- **SPLIT** — two lanes remain plausible; name the smallest deciding evidence.
 - **WRONG TOOL** — use `premortem`, `postmortem`, or a direct implementation path instead.
-- **INSUFFICIENT SIGNAL** — no concrete behavior, constraints, or competing paths are available.
+- **NEEDS SIGNAL** — no concrete behavior, constraints, or competing paths are available.
 
 ---
 
-# Branch Tournament Engine
+# Four-Lane Engine
 
 **F1** Frame the behavior or decision surface.
 
-**F2** Design four lanes:
+**F2** Design four lanes. Use product-friendly labels in the output and keep the internal incentives in mind:
 
-- Explorer: maximize novelty and search breadth.
-- Conservative: minimize blast radius and preserve contracts.
-- Adversary: disprove the leading fix and expose hidden failure modes.
-- Verifier: demand evidence, executable checks, and counterfactual fit.
+- Wide Search: maximize novelty and search breadth.
+- Smallest Safe Move: minimize blast radius and preserve contracts.
+- Break the Favorite: disprove the leading fix and expose hidden failure modes.
+- Prove It: demand evidence, executable checks, and counterfactual fit.
 
-**F3** Run each lane with its payoff.
+**F3** Run each lane with its incentive.
 
 **F4** Score lanes on evidence strength, counterfactual fit, reversibility, user value, and opposition survival.
 
@@ -134,18 +134,19 @@ Select the strongest applicable signal. If signals conflict, escalate.
 
 **F7** Produce the next move: implement, probe, narrow scope, or hand off to `premortem`/`postmortem`.
 
-Load `references/branch-tournament.md` for lane design patterns and scoring detail.
+Load `references/four-lane-playbook.md` for lane design patterns and pick criteria.
 
 ---
 
 # Output Non-Negotiables
 
-1. Lead with `4x4 Status`.
+1. Lead with `4x4 Snapshot`.
 2. Use cards/lists, not tables.
 3. Keep the four lanes visibly distinct.
 4. Name why losing lanes lost.
 5. Do not pad. Omit empty sections.
 6. If implementation follows, keep it scoped to the winning lane and honor repo/user testing constraints.
+7. User-facing language should feel like product work: lane, bet, proof, risk, pick, next move. Avoid exposing internal process labels unless explaining the skill itself.
 
 Load `references/output-template.md` for the full response shape.
 
@@ -160,7 +161,7 @@ Load based on mode before beginning analysis:
 **STANDARD / RAPID / DEEP:** Load:
 
 1. `references/output-template.md`
-2. `references/branch-tournament.md`
+2. `references/four-lane-playbook.md`
 3. `references/validation-layers.md`
 
 **Conditional loads:**

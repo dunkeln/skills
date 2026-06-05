@@ -5,10 +5,10 @@ Use when two or more lanes converge on the same files, same assumption, same fix
 ## Collapse Signals
 
 - All lanes recommend the same change.
-- Lanes differ only by label, not by payoff.
+- Lanes differ only by label, not by incentive.
 - Every lane inspects the same narrow path.
-- The adversary branch only adds generic caution.
-- The verifier branch asks for checks that do not discriminate between lanes.
+- The break-it lane only adds generic caution.
+- The proof lane asks for checks that do not discriminate between lanes.
 - The winning lane was chosen before opposing evidence was considered.
 
 ## Recovery
@@ -35,4 +35,4 @@ Name:
 - the replacement lane constraints
 - the new discriminating evidence
 
-Then rerun the tournament.
+Then rerun the four-lane pass.

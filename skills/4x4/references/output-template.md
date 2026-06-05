@@ -2,70 +2,68 @@
 
 Use cards and lists. Do not use tables.
 
+Use product-facing words. The user should see lanes, bets, proof, risk, pick, and next move. Avoid exposing internal process labels unless the user asks how the skill works.
+
 ## Standard Shape
 
 ```md
-## 4x4 Status
+## 4x4 Snapshot
 
-- Status: WINNER SELECTED | PROBE FIRST | SPLIT DECISION | WRONG TOOL | INSUFFICIENT SIGNAL
+- Call: PICKED | PROBE | SPLIT | WRONG TOOL | NEEDS SIGNAL
 - Mode: FAST | STANDARD | RAPID | DEEP
-- Winner: [lane name or "none yet"]
-- Reason: [one sentence]
+- Best lane: [lane name or "none yet"]
+- Why: [one sentence]
 - Next move: [implement/probe/switch skill/ask for missing context]
 
-## Frame
+## What We Are Trying To Do
 
 - Target behavior:
-- Constraint:
-- What would count as success:
+- Constraint that matters:
+- Done means:
 
 ## Four Lanes
 
-### Lane A: Explorer
+### Lane A: Wide Search
 
-- Payoff:
-- Claim:
-- Evidence:
+- Bet:
+- Why it could work:
 - Risk:
-- What would make it lose:
+- Proof needed:
 
-### Lane B: Conservative
+### Lane B: Smallest Safe Move
 
-- Payoff:
-- Claim:
-- Evidence:
+- Bet:
+- Why it could work:
 - Risk:
-- What would make it lose:
+- Proof needed:
 
-### Lane C: Adversary
+### Lane C: Break The Favorite
 
-- Payoff:
-- Claim:
-- Evidence:
+- Bet:
+- What it challenges:
 - Risk:
-- What would make it lose:
+- Proof needed:
 
-### Lane D: Verifier
+### Lane D: Prove It
 
-- Payoff:
-- Claim:
-- Evidence:
+- Bet:
+- Fastest proof:
 - Risk:
-- What would make it lose:
+- What would change the call:
 
-## Tournament
+## Pick
 
-- Strongest critique:
-- What survived:
-- What lost:
-- Discriminating evidence:
+- Chosen lane:
+- Why it beats the others:
+- What we are not doing:
+- What could still change the call:
 
-## Validation Gates
+## Proof
 
-- Scope:
-- Execution:
-- Self-reflection:
-- Memory:
+- Scope check:
+- Breakage risk:
+- Fastest verification:
+- Prior pattern or memory:
 
 ## Next Move
 
@@ -75,20 +73,20 @@ Use cards and lists. Do not use tables.
 ## FAST Shape
 
 ```md
-## 4x4 Status
+## 4x4 Snapshot
 
-- Status:
-- Winner:
+- Call:
+- Best lane:
 - Next move:
 
 ## Lanes
 
-- Explorer:
-- Conservative:
-- Adversary:
-- Verifier:
+- Wide Search:
+- Smallest Safe Move:
+- Break The Favorite:
+- Prove It:
 
-## Decision
+## Pick
 
 - Why this wins:
 - What to verify:
@@ -102,3 +100,4 @@ Use cards and lists. Do not use tables.
 - Do not let all lanes recommend the same fix.
 - Do not propose broad cleanup as the winning action unless broad cleanup is the proven mechanism.
 - Keep implementation advice scoped to the winning lane.
+- Prefer "proof needed" over "evidence gap" when writing to product engineers.

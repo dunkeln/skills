@@ -25,4 +25,4 @@ npx skills add https://github.com/dunkeln/skills --list --full-depth
 |---|---|
 | `premortem` | Pressure-test a high-risk technical plan before committing. |
 | `postmortem` | Explain an engineering failure with evidence-chain RCA. |
-| `4x4` | Break agent tunneling with a four-lane branch tournament. |
+| `4x4` | Compare four lanes before choosing the next move. |
