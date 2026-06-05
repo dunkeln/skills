@@ -1,4 +1,4 @@
-# dunkeln/skills
+# skills
 
 ![Agent Skills](https://img.shields.io/badge/agent%20skills-SKILL.md-111827)
 ![Registry](https://img.shields.io/badge/registry-monorepo-2563eb)
